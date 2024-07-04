@@ -41,7 +41,7 @@ const CompletedTodos = () => {
                                 key={todo.id}
                                 dateTime={todo.date}
                                 deleteTodo={async () => {
-                                    const response = await custom_axios.delete(ApiConstants.TODO.DELETE(todo.id), { headers: { Authorization: "Bearer " + localStorage.getItem("token") } });
+                                    await custom_axios.delete(ApiConstants.TODO.DELETE(todo.id), { headers: { Authorization: "Bearer " + localStorage.getItem("token") } });
                                     getAllCompletedTodos();
                                     toast.success("Todo Deleted Successfully!!");
                                 }}

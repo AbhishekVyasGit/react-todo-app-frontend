@@ -32,7 +32,7 @@ function ActiveTodos() {
         }
         const userId = getLoginInfo()?.userId;
         if (userId != null) {
-            const response = await custom_axios.post(
+            await custom_axios.post(
                 ApiConstants.TODO.ADD(userId),
                 {
                     title: title.current.value,
@@ -67,12 +67,12 @@ function ActiveTodos() {
                                 key={todo.id}
                                 dateTime={todo.date}
                                 deleteTodo={async () => {
-                                    const response = await custom_axios.delete(ApiConstants.TODO.DELETE(todo.id), { headers: { Authorization: "Bearer " + localStorage.getItem("token") } });
+                                    await custom_axios.delete(ApiConstants.TODO.DELETE(todo.id), { headers: { Authorization: "Bearer " + localStorage.getItem("token") } });
                                     getAllNotCompletedTodos();
                                     toast.success("Todo Deleted Successfully!!");
                                 }}
                                 markCompleted={async () => {
-                                    const response = await custom_axios.patch(ApiConstants.TODO.MARK_COMPLETE(todo.id), {}, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } });
+                                    await custom_axios.patch(ApiConstants.TODO.MARK_COMPLETE(todo.id), {}, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } });
                                     getAllNotCompletedTodos();
                                     toast.success("Todo Marked Completed");
                                 }}
