@@ -56,7 +56,7 @@ function ActiveTodos() {
             <div className="container mb-2 flex mx-auto w-full items-center justify-center">
                 <ul className="flex flex-col p-4">
                     <span className="text-black text-2xl ">Enter Todo : </span>
-                    <input ref={title} className="mt-2 p-2 border-blue-400 rounded-xl shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></input>
+                    <input ref={title} className="mt-2 p-2 border-blue-400 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></input>
                     <button onClick={saveTodo} className="w-36 px-2 py-4 text-white mx-auto mb-12 mt-2 bg-green-400 rounded-xl hover:bg-green-500 text-2xl">
                         Save
                     </button>
